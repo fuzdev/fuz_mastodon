@@ -42,13 +42,9 @@
 		<Card href={resolve('/docs')}>docs{#snippet icon()}{library.package_json.glyph}{/snippet}</Card>
 	</section>
 	<section class="width_upto_md">
-		<div class="mb_lg width_100">
-			<div class="width_100 mb_lg">
-				<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
-			</div>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
+		<Code
+			content={`<Toot
 	url="${url}"
 	initial_autoload
 	include_replies
@@ -58,9 +54,7 @@
 	settings_storage_key="example_1"
 	cache={cache?.data}
 />`}
-				/>
-			</div>
-		</div>
+		/>
 	</section>
 	<section class="width_upto_sm">
 		{#if !cache || cache.data !== undefined}
@@ -84,69 +78,59 @@
 		</p>
 		<h3>Allow all</h3>
 		<p>Adding <code>include_replies</code> enables all replies by default.</p>
-		<div class="width_100">
-			<Code
-				content={`<Toot
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 />`}
-			/>
-			<p>
-				This is the default value for <code>reply_filter</code>. It does nothing here but it's shown
-				for clarity.
-			</p>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<p>
+			This is the default value for <code>reply_filter</code>. It does nothing here but it's shown
+			for clarity.
+		</p>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={() => (
 		{type: 'custom', should_include: () => true}
 	)}
 />`}
-				/>
-			</div>
-			<h3>Allow if favourited by specific accounts</h3>
-			<p>You can provide a list of names whose favourites cause the reply to be shown.</p>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<h3>Allow if favourited by specific accounts</h3>
+		<p>You can provide a list of names whose favourites cause the reply to be shown.</p>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={() => (
 		{type: 'favourited_by', favourited_by: ['username1', 'user2']}
 	)},
 />`}
-				/>
-			</div>
-			<h3>Allow if favourited by the root status author</h3>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<h3>Allow if favourited by the root status author</h3>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={(item) => (
 		{type: 'favourited_by', favourited_by: [item.account.acct]}
 	)},
 />`}
-				/>
-			</div>
-			<h3>Allow with a mimimum number of favourites</h3>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<h3>Allow with a mimimum number of favourites</h3>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={() => (
 		{type: 'minimum_favourites', minimum_favourites: 3}
 	)},
 />`}
-				/>
-			</div>
-			<h3>Allow on custom conditions</h3>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<h3>Allow on custom conditions</h3>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={() => (
@@ -158,13 +142,11 @@
 		}
 	)},
 />`}
-				/>
-			</div>
-			<h3>Allow on multiple conditions</h3>
-			<p>Replies are included if <strong>any</strong> filter passes.</p>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<h3>Allow on multiple conditions</h3>
+		<p>Replies are included if <strong>any</strong> filter passes.</p>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={(item) => [
@@ -173,39 +155,31 @@
 		{type: 'custom', should_include: () => Math.random() > 0.5)}
 	]},
 />`}
-				/>
-			</div>
-			<h3>Allow none</h3>
-			<p>Simply omit <code>include_replies</code>:</p>
-			<div class="width_100 mb_lg">
-				<Code content={`<Toot	url="${url}" />`} />
-			</div>
-			<p>
-				Or pass <code>null</code> or <code>undefined</code> or <code>[]</code> for
-				<code>reply_filter</code>:
-			</p>
-			<div class="width_100">
-				<Code
-					content={`<Toot
+		/>
+		<h3>Allow none</h3>
+		<p>Simply omit <code>include_replies</code>:</p>
+		<Code content={`<Toot	url="${url}" />`} />
+		<p>
+			Or pass <code>null</code> or <code>undefined</code> or <code>[]</code> for
+			<code>reply_filter</code>:
+		</p>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={null}
 />`}
-				/>
-				<p>
-					Or return no filters (<code>null</code> or <code>undefined</code> or <code>[]</code>):
-				</p>
-				<div class="width_100">
-					<Code
-						content={`<Toot
+		/>
+		<p>
+			Or return no filters (<code>null</code> or <code>undefined</code> or <code>[]</code>):
+		</p>
+		<Code
+			content={`<Toot
 	url="${url}"
 	include_replies
 	reply_filter={() => null}
 />`}
-					/>
-				</div>
-			</div>
-		</div>
+		/>
 	</section>
 	<div class="my_xl5">
 		<DocsFooter {library} root_url="https://www.fuz.dev/">
