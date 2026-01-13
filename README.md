@@ -4,7 +4,7 @@
 
 > [Mastodon](https://github.com/mastodon/mastodon) components and helpers for
 > [Svelte](https://github.com/sveltejs/svelte), [SvelteKit](https://github.com/sveltejs/kit),
-> [Fuz UI](https://github.com/fuzdev/fuz_ui), and [Fuz CSS](https://github.com/fuzdev/fuz_css)
+> [fuz_ui](https://github.com/fuzdev/fuz_ui), and [fuz_css](https://github.com/fuzdev/fuz_css)
 > 🦣
 
 [**mastodon.fuz.dev**](https://mastodon.fuz.dev/)
