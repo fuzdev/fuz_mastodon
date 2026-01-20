@@ -200,7 +200,7 @@
 				{#if item}
 					<div transition:slide class="pb_md">
 						<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-						<a href={item.url} rel="noreferrer" class="display_block panel p_md">
+						<a href={item.url} rel="noreferrer" class="display:block panel p_md">
 							<span class="font_family_mono">↪︎</span> reply on Mastodon
 						</a>
 					</div>
@@ -236,7 +236,7 @@
 					</div>
 					{#if show_settings}
 						<div transition:slide class="settings controls panel">
-							<form class="width_100">
+							<form class="width:100%">
 								<div class="mb_lg">
 									<TootInput bind:url={updated_url} />
 								</div>
