@@ -41,7 +41,7 @@
 		</div>
 		<Card href={resolve('/docs')}>docs{#snippet icon()}{library.package_json.glyph}{/snippet}</Card>
 	</section>
-	<section class="width_upto_md">
+	<section class="width_atmost_md">
 		<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
 		<Code
 			content={`<Toot
@@ -56,7 +56,7 @@
 />`}
 		/>
 	</section>
-	<section class="width_upto_sm">
+	<section class="width_atmost_sm">
 		{#if !cache || cache.data !== undefined}
 			<Toot
 				{url}
@@ -68,7 +68,7 @@
 			/>
 		{/if}
 	</section>
-	<section class="width_upto_md">
+	<section class="width_atmost_md">
 		<h2>Allowlisting replies with custom rules</h2>
 		<p>
 			By default, no replies are included. You can opt into including replies with <code
