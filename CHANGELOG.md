@@ -1,5 +1,11 @@
 # @fuzdev/fuz_mastodon
 
+## 0.38.0
+
+### Minor Changes
+
+- upgrade deps ([#20](https://github.com/fuzdev/fuz_mastodon/pull/20))
+
 ## 0.37.0
 
 ### Minor Changes
