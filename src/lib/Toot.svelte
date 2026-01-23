@@ -303,7 +303,7 @@
 		margin-bottom: var(--space_md);
 	}
 	.bg_panel {
-		background-color: var(--bg);
+		background-color: var(--shade_00);
 		padding: var(--space_xs);
 	}
 	.icon {

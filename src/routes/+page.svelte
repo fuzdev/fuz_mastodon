@@ -36,7 +36,7 @@
 
 <main class="p_lg">
 	<section class="box">
-		<div class="panel p_lg mb_xl5 shadow_md bg">
+		<div class="panel p_lg mb_xl5 shadow_md shade_00">
 			<LibrarySummary {library} />
 		</div>
 		<Card href={resolve('/docs')}>docs{#snippet icon()}{library.package_json.glyph}{/snippet}</Card>
