@@ -11,7 +11,7 @@
 	"published": true,
 	"package_json": {
 		"name": "@fuzdev/fuz_mastodon",
-		"version": "0.38.0",
+		"version": "0.39.0",
 		"description": "Mastodon components and helpers for Svelte, SvelteKit, and Fuz",
 		"glyph": "🦣",
 		"logo": "logo.svg",
@@ -110,7 +110,7 @@
 	},
 	"source_json": {
 		"name": "@fuzdev/fuz_mastodon",
-		"version": "0.38.0",
+		"version": "0.39.0",
 		"modules": [
 			{
 				"path": "mastodon_cache.svelte.ts",

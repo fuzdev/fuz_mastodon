@@ -1,5 +1,11 @@
 # @fuzdev/fuz_mastodon
 
+## 0.39.0
+
+### Minor Changes
+
+- upgrade fuz_css ([#21](https://github.com/fuzdev/fuz_mastodon/pull/21))
+
 ## 0.38.0
 
 ### Minor Changes
