@@ -84,7 +84,7 @@
 	.mastodon_status_item {
 		display: flex;
 		flex-direction: column;
-		background-color: var(--panel_bg, var(--fg_1));
+		background-color: var(--shade_10);
 		border-radius: var(--border_radius_sm);
 		padding: var(--space_md);
 		/* TODO is this the API pattern we want? */
@@ -125,7 +125,7 @@
 	.names small,
 	.date a {
 		font-weight: 500;
-		color: var(--text_color_3);
+		color: var(--text_70);
 	}
 	.date {
 		display: flex;
