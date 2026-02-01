@@ -12,6 +12,7 @@ For coding conventions, see [`fuz-stack`](../fuz-stack/CLAUDE.md).
 
 ```bash
 gro check     # typecheck, test, lint, format check (run before committing)
+gro typecheck # typecheck only (faster iteration)
 gro test      # run tests with vitest
 gro gen       # regenerate .gen files
 gro build     # build for production
@@ -29,6 +30,23 @@ dev server.
 - fuz_css (@fuzdev/fuz_css) - CSS framework
 - fuz_ui (@fuzdev/fuz_ui) - UI components, context helpers
 - fuz_util (@fuzdev/fuz_util) - fetch utilities, logging, types
+
+## Scope
+
+fuz_mastodon is a **Mastodon embedding library**:
+
+- Embed public Mastodon posts with thread display
+- Reply filtering with multiple strategies (favourites, custom predicates)
+- Offline development with response caching
+- Reusable components for Svelte projects
+
+### What fuz_mastodon does NOT include
+
+- Authentication or account management
+- Posting, replying, or boosting
+- Direct messages or notifications
+- Multiple account support
+- Full Mastodon client features
 
 ## Architecture
 
@@ -86,19 +104,26 @@ Multiple filters use OR logic - at least one must pass for a reply to be include
 
 ### Key functions (`mastodon.ts`)
 
-URL utilities:
+**URL parsing:**
 
 - `parse_mastodon_status_url(url)` - extract host/id/author from URL
-- `to_mastodon_status_url(host, id)` - build web URL
-- `to_mastodon_api_status_url(host, id)` - build API endpoint
 
-Data fetching (all accept optional cache, log, token):
+**URL builders:**
+
+- `to_mastodon_status_url(host, id)` - build web URL (basic)
+- `to_mastodon_status_url_with_author(host, id, author)` - include author in path
+- `to_mastodon_status_url_with_users_author(host, id, author)` - `/users/` path variant
+- `to_mastodon_api_status_url(host, id)` - API endpoint for status
+- `to_mastodon_api_status_context_url(host, id)` - API endpoint for context
+- `to_mastodon_api_favourites_url(host, id)` - API endpoint for favourites
+
+**Data fetching** (all accept optional cache, log, token):
 
 - `fetch_mastodon_status(host, id, ...)` - fetch single toot
 - `fetch_mastodon_status_context(host, id, ...)` - fetch ancestors + descendants
 - `fetch_mastodon_favourites(host, id, ...)` - fetch accounts that favorited
 
-Reply filtering:
+**Reply filtering:**
 
 - `filter_valid_replies(root, context, filter, cache, log)` - async filter that
   fetches favourites data on demand for `favourited_by` filters
@@ -148,86 +173,52 @@ Bindable outputs: `loading`, `load_time`, `updated_url`
 
 **MastodonCache class** (`mastodon_cache.svelte.ts`):
 
-```typescript
-class MastodonCache {
-  data: FetchValueCache | undefined | null = $state();
-
-  constructor(
-    load_data: () => Promise<[Url, FetchValueCacheItem][] | null>,
-    load_on_mount = true
-  );
-}
-```
-
-- `undefined` = still loading
-- `null` = no data
+- Uses `$state()` for reactive cache data
+- `undefined` = still loading, `null` = no data
 - Provided via `mastodon_cache_context`
 
-Dev mode caching: Create `mastodon_dev_cache_data.ts` with pre-cached API
-responses as `[Url, FetchValueCacheItem][]` tuples for offline testing.
+**Dev cache format:** Create `mastodon_dev_cache_data.ts` exporting an array of
+`[Url, FetchValueCacheItem]` tuples. Capture live API responses during online
+development and store them for offline testing.
+
+### Storage helpers (`storage.ts`)
+
+- `load_from_storage(key, to_default, validate?)` - load with fallback and
+  optional validation function
+- `set_in_storage(key, value)` - store value (undefined removes, null stores)
 
 ### Context system
 
 - `mastodon_cache_context` - provides `MastodonCache` for API response caching
 
-### Storage helpers (`storage.ts`)
+### Svelte 5 patterns
 
-- `load_from_storage(key, default, validate?)` - load with fallback
-- `set_in_storage(key, value)` - store value (undefined removes, null stores)
+- **Bindable outputs** - Components expose state via `$bindable()` (`loading`,
+  `load_time`, `updated_url`, `item`, `status_context`, `replies`)
+- **Snippet data passing** - TootLoader uses snippets to pass fetched data
+- **Reactive cache** - MastodonCache uses `$state()` for reactive updates
+- **Performance tracking** - `load_time` measures fetch duration
 
-## Usage examples
+## Security
 
-Basic embedding:
+**CSP configuration:** Add Mastodon instance domains to your Content Security
+Policy for image sources and API fetches.
 
-```svelte
-<script>
-  import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';
-</script>
+**HTML content:** Uses `@html` to render user-generated content. Mastodon
+servers sanitize content, but you should review CSP settings.
 
-<Toot url="https://fosstodon.org/@user/123456789" />
-```
+**CSS handling:** Special styles for Mastodon-specific classes (`.invisible`,
+`.ellipsis`) to handle content formatting.
 
-With reply filtering by favorites:
+## Known limitations
 
-```svelte
-<Toot
-  url="https://fosstodon.org/@user/123456789"
-  include_replies
-  reply_filter={(item) => ({
-    type: 'favourited_by',
-    favourited_by: [item.account.acct],
-  })}
-/>
-```
-
-With minimum favorites threshold:
-
-```svelte
-<Toot
-  url="..."
-  include_replies
-  reply_filter={() => ({type: 'minimum_favourites', minimum_favourites: 3})}
-/>
-```
-
-With custom filter:
-
-```svelte
-<Toot
-  url="..."
-  include_replies
-  reply_filter={() => ({
-    type: 'custom',
-    should_include: (status) => status.account.followers_count > 100,
-  })}
-/>
-```
-
-## Limitations
-
-- No authentication support (read-only public API)
-- Single view/layout (more layouts planned)
-- CSP configuration required for Mastodon domains
+- **Read-only public API** - no authentication or posting
+- **Sequential favourite fetching** - filters fetch favourites one post at a
+  time (TODO: add concurrency)
+- **Svelte 5 animation quirks** - content transitions have known issues
+- **Favourite timestamps unavailable** - API doesn't expose `favourite.created_at`,
+  limiting time-based filtering options
+- **Single layout** - more display variants planned
 
 ## Project standards
 
@@ -236,6 +227,7 @@ With custom filter:
 - Prettier with tabs, 100 char width
 - Node >= 22.15
 - Tests in `src/test/` (not co-located)
+- Minimal test coverage (URL parsing only)
 
 ## Related projects
 
