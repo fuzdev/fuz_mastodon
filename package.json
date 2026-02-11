@@ -46,7 +46,6 @@
     "@fuzdev/gro": "^0.192.1",
     "@jridgewell/trace-mapping": "^0.3.31",
     "@ryanatkn/eslint-config": "^0.9.0",
-    "@ryanatkn/gro": "^0.191.0",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.50.1",
     "@sveltejs/package": "^2.5.7",
