@@ -93,7 +93,7 @@
 	.content :global(.invisible) {
 		display: none;
 	}
-	/* undo fuz's `.ellipsis` and implement Mastodon's */
+	/* undo fuz_css's `.ellipsis` and implement Mastodon's */
 	.content :global(.ellipsis) {
 		display: inline;
 		white-space: initial;
