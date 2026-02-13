@@ -6,7 +6,7 @@ fuz_mastodon (`@fuzdev/fuz_mastodon`) is a Svelte component library for embeddin
 Mastodon posts in websites. It provides nested thread display, configurable reply
 filtering, and optional caching for API responses.
 
-For coding conventions, see [`fuz-stack`](../fuz-stack/CLAUDE.md).
+For coding conventions, see Skill(fuz-stack).
 
 ## Gro commands
 
@@ -93,9 +93,9 @@ Toot.svelte (main entry point)
 
 ```typescript
 type ReplyFilter =
-  | { type: 'favourited_by'; favourited_by: string[] }
-  | { type: 'minimum_favourites'; minimum_favourites: number }
-  | { type: 'custom'; should_include: (status, root, context) => boolean };
+	| {type: 'favourited_by'; favourited_by: string[]}
+	| {type: 'minimum_favourites'; minimum_favourites: number}
+	| {type: 'custom'; should_include: (status, root, context) => boolean};
 
 type CreateReplyFilters = (item, context) => ReplyFilter | ReplyFilter[] | null;
 ```
@@ -133,6 +133,7 @@ Multiple filters use OR logic - at least one must pass for a reply to be include
 **Toot.svelte** - main entry point
 
 Props:
+
 - `url` - Mastodon post URL (required)
 - `include_ancestors` - show posts before root
 - `include_replies` - fetch and show replies
