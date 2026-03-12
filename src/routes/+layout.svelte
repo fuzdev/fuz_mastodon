@@ -3,7 +3,7 @@
 	import '@fuzdev/fuz_code/theme.css';
 	import '$routes/style.css';
 
-	import Themed from '@fuzdev/fuz_ui/Themed.svelte';
+	import ThemeRoot from '@fuzdev/fuz_ui/ThemeRoot.svelte';
 	import Dialog from '@fuzdev/fuz_ui/Dialog.svelte';
 	import ContextmenuRoot from '@fuzdev/fuz_ui/ContextmenuRoot.svelte';
 	import {contextmenu_attachment} from '@fuzdev/fuz_ui/contextmenu_state.svelte.js';
@@ -53,7 +53,7 @@
 	])}
 />
 
-<Themed>
+<ThemeRoot>
 	<ContextmenuRoot>
 		{@render children()}
 		{#if show_settings}
@@ -64,4 +64,4 @@
 			</Dialog>
 		{/if}
 	</ContextmenuRoot>
-</Themed>
+</ThemeRoot>
