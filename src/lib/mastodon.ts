@@ -51,7 +51,7 @@ export interface MastodonStatusUrl {
 }
 
 /**
- * Parses a url to a post or API endpoint for a post, aka Mastodon status context.
+ * parses a url to a post or API endpoint for a post, aka Mastodon status context
  * @param url
  * @returns the parsed host and id params, if any
  */
@@ -138,7 +138,7 @@ export const fetch_mastodon_favourites = async (
 // TODO these are very in-progress - add schemas and use them for parsing in the fetch helpers (probably with `.passthrough()` for foward-compat?)
 
 /**
- * Result from `https://:host/api/v1/statuses/:id/context`.
+ * result from `https://:host/api/v1/statuses/:id/context`
  * @see https://docs.joinmastodon.org/entities/Context/
  */
 export interface MastodonStatusContext {

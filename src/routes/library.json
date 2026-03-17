@@ -315,7 +315,7 @@
 					{
 						"name": "parse_mastodon_status_url",
 						"kind": "function",
-						"doc_comment": "Parses a url to a post or API endpoint for a post, aka Mastodon status context.",
+						"doc_comment": "parses a url to a post or API endpoint for a post, aka Mastodon status context",
 						"source_line": 58,
 						"type_signature": "(url: string): MastodonStatusUrl | null",
 						"return_type": "MastodonStatusUrl | null",
@@ -456,7 +456,7 @@
 					{
 						"name": "MastodonStatusContext",
 						"kind": "type",
-						"doc_comment": "Result from `https://:host/api/v1/statuses/:id/context`.",
+						"doc_comment": "result from `https://:host/api/v1/statuses/:id/context`",
 						"see_also": ["https://docs.joinmastodon.org/entities/Context/"],
 						"source_line": 144,
 						"type_signature": "MastodonStatusContext",
