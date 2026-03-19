@@ -225,7 +225,7 @@
 					{
 						"name": "to_mastodon_status_url_with_users_author",
 						"kind": "function",
-						"doc_comment": "longhand for `to_mastodon_status_url_with_author`, apperas",
+						"doc_comment": "longhand for `to_mastodon_status_url_with_author`, apperas.",
 						"source_line": 30,
 						"type_signature": "(host: string, id: string, author: string): string",
 						"return_type": "string",
@@ -326,7 +326,7 @@
 					{
 						"name": "parse_mastodon_status_url",
 						"kind": "function",
-						"doc_comment": "parses a url to a post or API endpoint for a post, aka Mastodon status context",
+						"doc_comment": "parses a url to a post or API endpoint for a post, aka Mastodon status context.",
 						"source_line": 58,
 						"type_signature": "(url: string): MastodonStatusUrl | null",
 						"return_type": "MastodonStatusUrl | null",
@@ -467,7 +467,7 @@
 					{
 						"name": "MastodonStatusContext",
 						"kind": "type",
-						"doc_comment": "result from `https://:host/api/v1/statuses/:id/context`",
+						"doc_comment": "result from `https://:host/api/v1/statuses/:id/context`.",
 						"see_also": [
 							"https://docs.joinmastodon.org/entities/Context/"
 						],
