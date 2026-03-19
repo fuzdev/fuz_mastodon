@@ -25,7 +25,7 @@ export const to_mastodon_status_url_with_author = (
 ): string => `https://${host}/@${author}/${id}`;
 
 /**
- * longhand for `to_mastodon_status_url_with_author`, apperas
+ * longhand for `to_mastodon_status_url_with_author`, apperas.
  */
 export const to_mastodon_status_url_with_users_author = (
 	host: string,
@@ -51,7 +51,7 @@ export interface MastodonStatusUrl {
 }
 
 /**
- * parses a url to a post or API endpoint for a post, aka Mastodon status context
+ * parses a url to a post or API endpoint for a post, aka Mastodon status context.
  * @param url
  * @returns the parsed host and id params, if any
  */
@@ -138,7 +138,7 @@ export const fetch_mastodon_favourites = async (
 // TODO these are very in-progress - add schemas and use them for parsing in the fetch helpers (probably with `.passthrough()` for foward-compat?)
 
 /**
- * result from `https://:host/api/v1/statuses/:id/context`
+ * result from `https://:host/api/v1/statuses/:id/context`.
  * @see https://docs.joinmastodon.org/entities/Context/
  */
 export interface MastodonStatusContext {
