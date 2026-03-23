@@ -725,6 +725,7 @@ body {
 }
 
 :where(label:not(.unstyled)) {
+	display: block;
 	color: var(--text_color);
 	cursor: pointer;
 }
@@ -1220,6 +1221,10 @@ a.chip {
 .color_i_50 {
 	color: var(--color_i_50);
 	--text_color: var(--color_i_50);
+}
+.color_j_50 {
+	color: var(--color_j_50);
+	--text_color: var(--color_j_50);
 }
 .border_radius_sm {
 	border-radius: var(--border_radius_sm);
