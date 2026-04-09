@@ -85,7 +85,7 @@
 		settings?: Snippet;
 	} = $props();
 
-	let loaded_status_key = $state(1);
+	let loaded_status_key = $state.raw(1);
 
 	export const reset = (): void => {
 		loaded_status_key++;

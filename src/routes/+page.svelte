@@ -11,7 +11,7 @@
 
 	import {MastodonCache, mastodon_cache_context} from '$lib/mastodon_cache.svelte.js';
 
-	let cache: MastodonCache | null = $state(null);
+	let cache: MastodonCache | null = $state.raw(null);
 
 	if (DEV) {
 		cache = mastodon_cache_context.set(

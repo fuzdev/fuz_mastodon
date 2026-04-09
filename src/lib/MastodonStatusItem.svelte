@@ -30,7 +30,7 @@
 	const edited_ago = $derived(edited_at ? formatDistance(new Date(), new Date(edited_at)) : null);
 	const joined = $derived(format(new Date(account_created), 'MMM yyyy'));
 
-	let show_note = $state(false);
+	let show_note = $state.raw(false);
 	const toggle_note = (): void => {
 		show_note = !show_note;
 	};

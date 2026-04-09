@@ -11,7 +11,7 @@ export class MastodonCache {
 	/**
 	 * If `undefined`, it's still loading. `null` means no data.
 	 */
-	data: FetchValueCache | undefined | null = $state();
+	data: FetchValueCache | undefined | null = $state.raw();
 
 	constructor(
 		load_data: () => Promise<Array<[Url, FetchValueCacheItem]> | null>,
