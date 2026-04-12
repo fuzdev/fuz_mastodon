@@ -975,6 +975,11 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+/* like `.box` but uncentered */
+.column {
+	display: flex;
+	flex-direction: column;
+}
 /* can be used to override the direction of a `.box` */
 .row {
 	display: flex;

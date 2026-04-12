@@ -16,7 +16,7 @@
 </script>
 
 {#if replies.length}
-	<ul class="mastodon_status_tree unstyled">
+	<ul class="mastodon-status-tree unstyled">
 		{#each replies as reply (reply.id)}
 			<li>
 				<Message item={reply} />
@@ -27,7 +27,7 @@
 {/if}
 
 <style>
-	.mastodon_status_tree {
+	.mastodon-status-tree {
 		padding-left: var(--space_xl4);
 		margin-bottom: var(--space_md);
 	}

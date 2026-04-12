@@ -36,7 +36,7 @@
 	};
 </script>
 
-<div class="mastodon_status_item">
+<div class="mastodon-status-item">
 	<header>
 		<button
 			type="button"
@@ -81,7 +81,7 @@
 </div>
 
 <style>
-	.mastodon_status_item {
+	.mastodon-status-item {
 		display: flex;
 		flex-direction: column;
 		background-color: var(--shade_10);

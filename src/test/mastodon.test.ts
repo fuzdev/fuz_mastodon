@@ -1,6 +1,6 @@
 import {test, assert} from 'vitest';
 
-import {parse_mastodon_status_url} from '$lib/mastodon.ts';
+import {parse_mastodon_status_url} from '$lib/mastodon.js';
 
 test('parse a mastodon status url', () => {
 	assert.deepEqual(

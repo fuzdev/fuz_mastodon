@@ -9,10 +9,10 @@
 	const library = library_context.get();
 </script>
 
-<main class="width_atmost_md">
+<main class="column align-items:center mx_auto width_atmost_md">
 	<div class="box">
 		<header>
-			<h1 class="my_xl3">{library.repo_name}</h1>
+			<h1 class="my_xl3 text-align:center">{library.repo_name}</h1>
 		</header>
 		<nav class="mb_xl3">
 			<Breadcrumb>{library.package_json.glyph}</Breadcrumb>
@@ -28,17 +28,3 @@
 		<PageFooter {library} />
 	</div>
 </main>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 auto;
-	}
-	h1 {
-		display: flex;
-		align-items: baseline;
-		text-align: center;
-	}
-</style>

@@ -34,14 +34,14 @@
 
 <!-- eslint-disable svelte/no-useless-mustaches -->
 
-<main class="p_lg">
-	<section class="box">
+<main class="column align-items:center mx_auto p_lg">
+	<section class="box my_xl5">
 		<div class="panel p_lg mb_xl5 shadow_md shade_00">
 			<LibrarySummary {library} />
 		</div>
 		<Card href={resolve('/docs')}>docs{#snippet icon()}{library.package_json.glyph}{/snippet}</Card>
 	</section>
-	<section class="width_atmost_md">
+	<section class="width_atmost_md my_xl5">
 		<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
 		<Code
 			content={`<Toot
@@ -56,7 +56,7 @@
 />`}
 		/>
 	</section>
-	<section class="width_atmost_sm">
+	<section class="width_atmost_sm my_xl5">
 		{#if !cache || cache.data !== undefined}
 			<Toot
 				{url}
@@ -68,7 +68,7 @@
 			/>
 		{/if}
 	</section>
-	<section class="width_atmost_md">
+	<section class="width_atmost_md my_xl5">
 		<h2>Allowlisting replies with custom rules</h2>
 		<p>
 			By default, no replies are included. You can opt into including replies with <code
@@ -189,15 +189,3 @@
 		</DocsFooter>
 	</div>
 </main>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 auto;
-	}
-	section {
-		margin: var(--space_xl5) 0;
-	}
-</style>

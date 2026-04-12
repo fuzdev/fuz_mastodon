@@ -150,7 +150,7 @@
 			<!-- TODO this transition is working on my blog but not on this docs website, what's going on? I tried it on `/about` too -->
 			<!-- TODO techically this class should probably be added based on `include_replies`, and display an error if they're null, meaning failed to load -->
 			<div class="toot" class:replies transition:slide>
-				<div class="toot_content">
+				<div class="toot-content">
 					{#if include_ancestors && status_context}
 						<div transition:slide>
 							<!-- TODO style differently or something -->
@@ -159,24 +159,24 @@
 							{/each}
 						</div>
 					{/if}
-					<div class="main_post panel">
-						<div class="panel bg_panel">
+					<div class="main-post panel">
+						<div class="panel bg-panel">
 							{#if item}
 								<!-- TODO Svelte 5 animation bug - keeping this one here because the alternative is a janky animation,
 									and it's not as bad for UX as the contentwarning one below -->
-								<div class="transition_wrapper" transition:slide>
+								<div class="transition-wrapper" transition:slide>
 									<MastodonStatusItem {item} --margin="0" />
 								</div>
 							{:else}
-								<div class="transition_wrapper" transition:slide>
+								<div class="transition-wrapper" transition:slide>
 									<PendingButton
 										pending={loading || false}
 										disabled={!enable_load}
 										onclick={() => load()}
 									>
-										<div class="icon_button_content">
+										<div class="icon-button-content">
 											<div class="icon">🦣</div>
-											<div class="button_content">
+											<div class="button-content">
 												<div>
 													load toot{#if include_replies || include_ancestors}s{/if} from
 												</div>
@@ -205,7 +205,7 @@
 						</a>
 					</div>
 				{/if}
-				<div class="toot_controls">
+				<div class="toot-controls">
 					<div
 						class="controls"
 						{@attach intersect(() => ({
@@ -228,7 +228,7 @@
 							<div class="reset">
 								<button type="button" onclick={reset} disabled={!enable_reset}>
 									reset
-								</button>{#if load_time !== undefined}<div class="loaded_message" transition:slide>
+								</button>{#if load_time !== undefined}<div class="loaded-message" transition:slide>
 										loaded in {Math.round(load_time)}ms
 									</div>{/if}
 							</div>
@@ -269,10 +269,10 @@
 		gap: var(--space_md);
 		width: 100%;
 	}
-	.toot_content {
+	.toot-content {
 		flex: 1;
 	}
-	.toot_controls {
+	.toot-controls {
 		display: flex;
 		flex-direction: column;
 		flex: 1;
@@ -283,26 +283,26 @@
 		align-items: flex-start;
 		gap: var(--space_md);
 	}
-	.icon_button_content {
+	.icon-button-content {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		text-align: left;
 	}
 	/* TODO messy */
-	.icon_button_content .button_content {
+	.icon-button-content .button-content {
 		overflow: hidden;
 	}
-	.button_content {
+	.button-content {
 		line-height: var(--line_height_lg);
 	}
-	.main_post {
+	.main-post {
 		padding: var(--space_md);
 	}
-	.toot.replies .main_post {
+	.toot.replies .main-post {
 		margin-bottom: var(--space_md);
 	}
-	.bg_panel {
+	.bg-panel {
 		background-color: var(--shade_00);
 		padding: var(--space_xs);
 	}
@@ -318,7 +318,7 @@
 	.reset :global(button) {
 		margin-bottom: 0;
 	}
-	.loaded_message {
+	.loaded-message {
 		margin-left: var(--space_sm);
 	}
 	.settings {
@@ -327,7 +327,7 @@
 		margin-top: var(--space_md);
 		width: 100%;
 	}
-	.transition_wrapper {
+	.transition-wrapper {
 		display: flex;
 		flex-direction: column;
 	}
