@@ -296,7 +296,7 @@ export const filter_valid_replies = async (
 					continue;
 				}
 				// TODO cache these somewhere maybe?
-				const favourites = await fetch_mastodon_favourites(host, status.id, cache, log); // eslint-disable-line no-await-in-loop
+				const favourites = await fetch_mastodon_favourites(host, status.id, cache, log);
 				const favourite = favourites?.find((f) => filter.favourited_by.includes(f.acct)); // TODO customize via a prop (string/set/callback)
 				// TODO this logic is what I want, but `favourite.created_at` is the account creation not the favourite creation, and the API doesn't appear to support it :[
 				// if (favourite && (!s.edited_at || new Date(s.edited_at) < new Date(favourite.created_at))) {
