@@ -63,6 +63,7 @@
 			"@sveltejs/package": "^2.5.7",
 			"@sveltejs/vite-plugin-svelte": "^6.2.4",
 			"@types/estree": "^1.0.8",
+			"@types/node": "^24.12.4",
 			"@webref/css": "^8.2.0",
 			"date-fns": "^4.1.0",
 			"eslint": "^9.39.1",
@@ -331,7 +332,7 @@
 						"name": "fetch_mastodon_status_context",
 						"kind": "function",
 						"source_line": 72,
-						"type_signature": "(host: string, id: string, cache?: Map<string, { key: string; url: string; params: any; value: any; etag: string | null; last_modified: string | null; }> | null | undefined, log?: Logger | undefined, request?: RequestInit | undefined, token?: string | undefined, fetch?: ((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<...>) | undefined): Promise<...>",
+						"type_signature": "(host: string, id: string, cache?: Map<string, { key: string; url: string; params: any; value: any; etag: string | null; last_modified: string | null; }> | null | undefined, log?: Logger | undefined, request?: RequestInit | undefined, token?: string | undefined, fetch?: { ...; } | undefined): Promise<...>",
 						"return_type": "Promise<MastodonStatusContext | null>",
 						"parameters": [
 							{
@@ -364,7 +365,7 @@
 							},
 							{
 								"name": "fetch",
-								"type": "((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>) | undefined",
+								"type": "{ (input: RequestInfo | URL, init?: RequestInit | undefined): Promise<Response>; (input: string | Request | URL, init?: RequestInit | undefined): Promise<...>; } | undefined",
 								"optional": true
 							}
 						]
@@ -373,7 +374,7 @@
 						"name": "fetch_mastodon_status",
 						"kind": "function",
 						"source_line": 94,
-						"type_signature": "(host: string, id: string, cache?: Map<string, { key: string; url: string; params: any; value: any; etag: string | null; last_modified: string | null; }> | null | undefined, log?: Logger | undefined, request?: RequestInit | undefined, token?: string | undefined, fetch?: ((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<...>) | undefined): Promise<...>",
+						"type_signature": "(host: string, id: string, cache?: Map<string, { key: string; url: string; params: any; value: any; etag: string | null; last_modified: string | null; }> | null | undefined, log?: Logger | undefined, request?: RequestInit | undefined, token?: string | undefined, fetch?: { ...; } | undefined): Promise<...>",
 						"return_type": "Promise<MastodonStatus | null>",
 						"parameters": [
 							{
@@ -406,7 +407,7 @@
 							},
 							{
 								"name": "fetch",
-								"type": "((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>) | undefined",
+								"type": "{ (input: RequestInfo | URL, init?: RequestInit | undefined): Promise<Response>; (input: string | Request | URL, init?: RequestInit | undefined): Promise<...>; } | undefined",
 								"optional": true
 							}
 						]
@@ -415,7 +416,7 @@
 						"name": "fetch_mastodon_favourites",
 						"kind": "function",
 						"source_line": 116,
-						"type_signature": "(host: string, status_id: string, cache?: Map<string, { key: string; url: string; params: any; value: any; etag: string | null; last_modified: string | null; }> | null | undefined, log?: Logger | undefined, request?: RequestInit | undefined, token?: string | undefined, fetch?: ((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<...>) | undefined): Promise<...>",
+						"type_signature": "(host: string, status_id: string, cache?: Map<string, { key: string; url: string; params: any; value: any; etag: string | null; last_modified: string | null; }> | null | undefined, log?: Logger | undefined, request?: RequestInit | undefined, token?: string | undefined, fetch?: { ...; } | undefined): Promise<...>",
 						"return_type": "Promise<MastodonFavourite[] | null>",
 						"parameters": [
 							{
@@ -448,7 +449,7 @@
 							},
 							{
 								"name": "fetch",
-								"type": "((input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>) | undefined",
+								"type": "{ (input: RequestInfo | URL, init?: RequestInit | undefined): Promise<Response>; (input: string | Request | URL, init?: RequestInit | undefined): Promise<...>; } | undefined",
 								"optional": true
 							}
 						]
