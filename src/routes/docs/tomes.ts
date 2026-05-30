@@ -5,7 +5,7 @@ import PackagePage from '$routes/docs/package/+page.svelte';
 
 export const tomes: Array<Tome> = [
 	{
-		name: 'api',
+		slug: 'api',
 		category: 'reference',
 		Component: ApiPage,
 		related_tomes: [],
@@ -13,7 +13,7 @@ export const tomes: Array<Tome> = [
 		related_declarations: [],
 	},
 	{
-		name: 'package',
+		slug: 'package',
 		category: 'reference',
 		Component: PackagePage,
 		related_tomes: [],
