@@ -2,20 +2,24 @@
 	import Breadcrumb from '@fuzdev/fuz_ui/Breadcrumb.svelte';
 	import DocsFooter from '@fuzdev/fuz_ui/DocsFooter.svelte';
 	import type {Library} from '@fuzdev/fuz_ui/library.svelte.js';
+	import {site_context} from '@fuzdev/fuz_ui/site.svelte.js';
+	import {FUZ_DEV_URL} from '@fuzdev/fuz_ui/constants.js';
 
 	const {
 		library,
 	}: {
 		library: Library;
 	} = $props();
+
+	const site = site_context.get();
 </script>
 
 <footer>
 	<nav>
-		<Breadcrumb>{library.package_json.glyph}</Breadcrumb>
+		<Breadcrumb />
 	</nav>
 	{#if library.package_json}
-		<DocsFooter {library} root_url="https://www.fuz.dev/" />
+		<DocsFooter repo_url={site.repo_url} root_url={FUZ_DEV_URL} />
 	{/if}
 </footer>
 

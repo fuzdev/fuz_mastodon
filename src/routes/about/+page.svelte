@@ -15,7 +15,7 @@
 			<h1 class="my_xl3 text-align:center">{library.repo_name}</h1>
 		</header>
 		<nav class="mb_xl3">
-			<Breadcrumb>{library.package_json.glyph}</Breadcrumb>
+			<Breadcrumb />
 		</nav>
 	</div>
 	<section class="box width:100% mb_lg">

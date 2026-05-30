@@ -1,5 +1,7 @@
 <script lang="ts">
 	import DocsFooter from '@fuzdev/fuz_ui/DocsFooter.svelte';
+	import {site_context} from '@fuzdev/fuz_ui/site.svelte.js';
+	import {FUZ_DEV_URL} from '@fuzdev/fuz_ui/constants.js';
 	import LibrarySummary from '@fuzdev/fuz_ui/LibrarySummary.svelte';
 	import Card from '@fuzdev/fuz_ui/Card.svelte';
 	import {library_context} from '@fuzdev/fuz_ui/library.svelte.js';
@@ -28,6 +30,7 @@
 	}
 
 	const library = library_context.get();
+	const site = site_context.get();
 
 	const url = 'https://hci.social/@ryanatkn/111491794208793604';
 </script>
@@ -39,7 +42,7 @@
 		<div class="panel p_lg mb_xl5 shadow_md shade_00">
 			<LibrarySummary {library} />
 		</div>
-		<Card href={resolve('/docs')}>docs{#snippet icon()}{library.package_json.glyph}{/snippet}</Card>
+		<Card href={resolve('/docs')}>docs{#snippet icon()}{site.glyph}{/snippet}</Card>
 	</section>
 	<section class="width_atmost_md my_xl5">
 		<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
@@ -182,7 +185,7 @@
 		/>
 	</section>
 	<div class="my_xl5">
-		<DocsFooter {library} root_url="https://www.fuz.dev/">
+		<DocsFooter repo_url={site.repo_url} root_url={FUZ_DEV_URL}>
 			{#snippet logo_header()}
 				<a class="mb_xs" href={resolve('/about')}>about</a>
 			{/snippet}
