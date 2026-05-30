@@ -1,5 +1,12 @@
 # @fuzdev/fuz_mastodon
 
+## 0.40.0
+
+### Minor Changes
+
+- chore: upgrade peer deps ([0db24aa](https://github.com/fuzdev/fuz_mastodon/commit/0db24aa))
+- chore: update styling patterns ([de97d0b](https://github.com/fuzdev/fuz_mastodon/commit/de97d0b))
+
 ## 0.39.0
 
 ### Minor Changes
