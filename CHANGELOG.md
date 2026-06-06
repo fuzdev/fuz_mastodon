@@ -1,5 +1,12 @@
 # @fuzdev/fuz_mastodon
 
+## 0.41.0
+
+### Minor Changes
+
+- fix: move `date-fns` from peer to `dependency` — it's pure functions with no singleton hazard, and consumers never interact with it ([fdcf52e](https://github.com/fuzdev/fuz_mastodon/commit/fdcf52e))
+- chore: upgrade peer deps ([92687d3](https://github.com/fuzdev/fuz_mastodon/commit/92687d3))
+
 ## 0.40.0
 
 ### Minor Changes
