@@ -2,9 +2,9 @@
 	import DocsFooter from '@fuzdev/fuz_ui/DocsFooter.svelte';
 	import {site_context} from '@fuzdev/fuz_ui/site.svelte.js';
 	import {FUZ_DEV_URL} from '@fuzdev/fuz_ui/constants.js';
-	import LibrarySummary from '@fuzdev/fuz_ui/LibrarySummary.svelte';
 	import Card from '@fuzdev/fuz_ui/Card.svelte';
-	import {library_context} from '@fuzdev/fuz_ui/library.svelte.js';
+	import Svg from '@fuzdev/fuz_ui/Svg.svelte';
+	import {logo_fuz_mastodon} from '@fuzdev/fuz_ui/logos.js';
 	import {resolve} from '$app/paths';
 	import Code from '@fuzdev/fuz_code/Code.svelte';
 	import {DEV} from 'esm-env';
@@ -29,7 +29,6 @@
 		// Then paste the string into the `mastodon_dev_cache_data.js` file as the exported `mastodon_dev_cache_data` value.
 	}
 
-	const library = library_context.get();
 	const site = site_context.get();
 
 	const url = 'https://hci.social/@ryanatkn/111491794208793604';
@@ -39,8 +38,9 @@
 
 <main class="column align-items:center mx_auto p_lg">
 	<section class="box my_xl5">
-		<div class="panel p_lg mb_xl5 shadow_md shade_00">
-			<LibrarySummary {library} />
+		<div class="panel p_lg mb_xl5 shadow_md shade_00 box">
+			<h1>fuz_mastodon</h1>
+			<Svg data={logo_fuz_mastodon} size="var(--icon_size_xl2)" />
 		</div>
 		<Card href={resolve('/docs')}>docs{#snippet icon()}{site.glyph}{/snippet}</Card>
 	</section>

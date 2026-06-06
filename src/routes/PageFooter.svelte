@@ -18,7 +18,7 @@
 	<nav>
 		<Breadcrumb />
 	</nav>
-	{#if library.package_json}
+	{#if library.pkg_json}
 		<DocsFooter repo_url={site.repo_url} root_url={FUZ_DEV_URL} />
 	{/if}
 </footer>
