@@ -1,5 +1,11 @@
 # @fuzdev/fuz_mastodon
 
+## 0.42.0
+
+### Minor Changes
+
+- deps: upgrade `@fuzdev/fuz_ui@0.203.0` ([8902ae2](https://github.com/fuzdev/fuz_mastodon/commit/8902ae2))
+
 ## 0.41.0
 
 ### Minor Changes
