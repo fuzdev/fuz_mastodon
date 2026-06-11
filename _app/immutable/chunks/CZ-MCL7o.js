@@ -1,0 +1,1 @@
+import{l as o,m as y,k as l,J as v,K as T,L as f,x as m,B as p,w as i,M as A,y as R}from"./D1ElgAzt.js";function k(d,_,e){var s;o&&(s=R,y());var r=new p(d);l(()=>{var a=_()??null;if(o){var h=T(s),c=h===A,u=a!==null;if(c!==u){var t=f();m(t),r.anchor=t,i(!1),r.ensure(a,a&&(n=>e(n,a))),i(!0);return}}r.ensure(a,a&&(n=>e(n,a)))},v)}export{k as c};
