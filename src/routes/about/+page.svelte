@@ -7,7 +7,8 @@
 	import PageFooter from '$routes/PageFooter.svelte';
 	import {library_json} from '$routes/library.js';
 
-	const library = library_context.set(new Library(library_json));
+	const library = new Library(library_json);
+	library_context.set(() => library);
 </script>
 
 <main class="column align-items:center mx_auto width_atmost_md">
