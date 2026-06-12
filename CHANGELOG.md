@@ -1,5 +1,11 @@
 # @fuzdev/fuz_mastodon
 
+## 0.43.0
+
+### Minor Changes
+
+- chore: bump fuz_ui peer dep ([3dc8f02](https://github.com/fuzdev/fuz_mastodon/commit/3dc8f02))
+
 ## 0.42.0
 
 ### Minor Changes
