@@ -180,9 +180,9 @@
 												<div>
 													load toot{#if include_replies || include_ancestors}s{/if} from
 												</div>
-												<code class="ellipsis"
-													>{#if host}{host}{:else}invalid url{/if}</code
-												>
+												<code class="ellipsis">
+													{#if host}{host}{:else}invalid url{/if}
+												</code>
 											</div>
 										</div>
 									</PendingButton>
@@ -226,11 +226,12 @@
 								settings
 							</button>
 							<div class="reset">
-								<button type="button" onclick={reset} disabled={!enable_reset}>
-									reset
-								</button>{#if load_time !== undefined}<div class="loaded-message" transition:slide>
+								<button type="button" onclick={reset} disabled={!enable_reset}>reset</button
+								>{#if load_time !== undefined}
+									<div class="loaded-message" transition:slide>
 										loaded in {Math.round(load_time)}ms
-									</div>{/if}
+									</div>
+								{/if}
 							</div>
 						</div>
 					</div>
@@ -246,9 +247,10 @@
 										title={autoload
 											? 'replies will load automatically when scrolled intersect'
 											: 'replies are not loaded until you request them'}
-										><input type="checkbox" bind:checked={autoload} />automatically load when
-										scrolled onscreen</label
 									>
+										<input type="checkbox" bind:checked={autoload} />automatically load when
+										scrolled onscreen
+									</label>
 								</fieldset>
 							</form>
 							{@render settings?.()}

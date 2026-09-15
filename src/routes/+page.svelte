@@ -42,7 +42,10 @@
 			<h1>fuz_mastodon</h1>
 			<Svg data={logo_fuz_mastodon} size="var(--icon_size_xl2)" />
 		</div>
-		<Card href={resolve('/docs')}>docs{#snippet icon()}{site.glyph}{/snippet}</Card>
+		<Card href={resolve('/docs')}>
+			docs
+			{#snippet icon()}{site.glyph}{/snippet}
+		</Card>
 	</section>
 	<section class="width_atmost_md my_xl5">
 		<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
@@ -74,10 +77,8 @@
 	<section class="width_atmost_md my_xl5">
 		<h2>Allowlisting replies with custom rules</h2>
 		<p>
-			By default, no replies are included. You can opt into including replies with <code
-				>include_replies</code
-			>
-			and customize them with <code>reply_filter</code>.
+			By default, no replies are included. You can opt into including replies with
+			<code>include_replies</code> and customize them with <code>reply_filter</code>.
 		</p>
 		<h3>Allow all</h3>
 		<p>Adding <code>include_replies</code> enables all replies by default.</p>

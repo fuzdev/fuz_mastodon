@@ -47,8 +47,9 @@
 			aria-label={account_note
 				? `${show_note ? 'hide' : 'show'} ${account_acct}'s profile`
 				: undefined}
-			><img class="icon" src={account_avatar} alt="avatar for {account_acct}" /></button
 		>
+			<img class="icon" src={account_avatar} alt="avatar for {account_acct}" />
+		</button>
 		<div class="names">
 			<div class="name">
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
@@ -56,16 +57,16 @@
 					{account_display_name}
 				</a>
 			</div>
-			<small title="following {account_following_count}, {account_followers_count} followers"
-				>{account_acct}</small
-			>
+			<small title="following {account_following_count}, {account_followers_count} followers">
+				{account_acct}
+			</small>
 			<small
 				class="date"
 				title="posted {created}{edited ? `, edited ${edited}` : ''}, joined {joined}"
 			>
 				<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-				<a href={url}>{created_ago} ago{edited_ago ? `, edited ${edited_ago} ago` : ''}</a></small
-			>
+				<a href={url}>{created_ago} ago{edited_ago ? `, edited ${edited_ago} ago` : ''}</a>
+			</small>
 		</div>
 	</header>
 	{#if show_note && account_note}
@@ -74,9 +75,14 @@
 		</div>
 	{/if}
 	<div class="content">
-		{#if sensitive}<details>
-				<summary>{spoiler_text || 'view sensitive content'}</summary>{@html content}
-			</details>{:else}{@html content}{/if}
+		{#if sensitive}
+			<details>
+				<summary>{spoiler_text || 'view sensitive content'}</summary>
+				{@html content}
+			</details>
+		{:else}
+			{@html content}
+		{/if}
 	</div>
 </div>
 
