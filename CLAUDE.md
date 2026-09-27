@@ -224,7 +224,7 @@ servers sanitize content, but you should review CSP settings.
 
 - TypeScript strict mode
 - Svelte 5 with runes API ($state, $derived, $effect)
-- Prettier with tabs, 100 char width
+- tsv (`gro format`) with tabs, 100 char width
 - Node >= 22.15
 - Tests in `src/test/` (not co-located)
 - Minimal test coverage (URL parsing only)
