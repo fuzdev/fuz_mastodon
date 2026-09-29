@@ -17,9 +17,6 @@ gro test      # run tests with vitest
 gro build     # build for production
 ```
 
-IMPORTANT for AI agents: Do NOT run `gro dev` - the developer will manage the
-dev server.
-
 ## Key dependencies
 
 - Svelte 5 - component framework
