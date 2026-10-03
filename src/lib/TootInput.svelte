@@ -20,7 +20,8 @@
 <fieldset>
 	<div class="row" class:mb_lg={invalid}>
 		<label title="where to load the toot" class="flex:1 row">
-			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<!-- TODO bugged with `-next-line` -->
+			<!-- eslint-disable svelte/no-navigation-without-resolve -->
 			<a
 				class="icon_button box mr_lg"
 				style:font-size="var(--font_size_xl)"
