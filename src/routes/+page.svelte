@@ -42,10 +42,7 @@
 			<h1>fuz_mastodon</h1>
 			<Svg data={logo_fuz_mastodon} size="var(--icon_size_xl2)" />
 		</div>
-		<Card href={resolve('/docs')}>
-			docs
-			{#snippet icon()}{site.glyph}{/snippet}
-		</Card>
+		<Card href={resolve('/docs')} icon={site.glyph}>docs</Card>
 	</section>
 	<section class="width_atmost_md my_xl5">
 		<Code lang="ts" content={`import Toot from '@fuzdev/fuz_mastodon/Toot.svelte';`} />
