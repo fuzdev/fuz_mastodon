@@ -9,9 +9,9 @@
 	import Code from '@fuzdev/fuz_code/Code.svelte';
 	import { DEV } from 'esm-env';
 
-	import Toot from '$lib/Toot.svelte';
+	import Toot from '#lib/Toot.svelte';
 
-	import { MastodonCache, mastodon_cache_context } from '$lib/mastodon_cache.svelte.ts';
+	import { MastodonCache, mastodon_cache_context } from '#lib/mastodon_cache.svelte.ts';
 
 	let cache: MastodonCache | null = $state.raw(null);
 

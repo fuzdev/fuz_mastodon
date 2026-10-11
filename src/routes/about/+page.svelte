@@ -4,8 +4,8 @@
 	import Breadcrumb from '@fuzdev/fuz_ui/Breadcrumb.svelte';
 	import EcosystemLinksPanel from '@fuzdev/fuz_ui/EcosystemLinksPanel.svelte';
 
-	import PageFooter from '$routes/PageFooter.svelte';
-	import { library_json } from '$routes/library.ts';
+	import PageFooter from '#routes/PageFooter.svelte';
+	import { library_json } from '#routes/library.ts';
 
 	const library = new Library(library_json);
 	library_context.set(() => library);

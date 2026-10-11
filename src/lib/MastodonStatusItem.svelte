@@ -11,7 +11,7 @@
 		item: MastodonStatus;
 	} = $props();
 
-	// see the CSP in `svelte.config.js`
+	// see the CSP in `vite.config.ts`
 	/* eslint-disable svelte/no-at-html-tags */
 
 	const { created_at, edited_at, content, account, url, sensitive, spoiler_text } = $derived(item);

@@ -6,7 +6,7 @@
 	import { parse_mastodon_status_url } from './mastodon.ts';
 
 	let {
-		url = $bindable(),
+		url = $bindable(), // eslint-disable-line @typescript-eslint/no-useless-default-assignment
 		attrs
 	}: {
 		url: string;
