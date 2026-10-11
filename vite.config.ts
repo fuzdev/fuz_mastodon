@@ -38,7 +38,7 @@ export default defineConfig({
 			},
 			version: { name: execSync('git rev-parse HEAD').toString().trim() }
 		}),
-		svelte_docinfo(),
+		svelte_docinfo({ onDuplicates: 'throw' }),
 		vite_plugin_fuz_css(),
 		vite_plugin_pkg_json()
 	],
