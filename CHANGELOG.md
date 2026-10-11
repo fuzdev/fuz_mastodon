@@ -1,5 +1,12 @@
 # @fuzdev/fuz_mastodon
 
+## 0.44.0
+
+### Minor Changes
+
+- chore: bump the `@fuzdev/fuz_css` peer to `>=0.65.0` and the `@fuzdev/fuz_ui` peer to `>=0.210.0` ([b7b877f](https://github.com/fuzdev/fuz_mastodon/commit/b7b877f))
+- **breaking** feat: support SvelteKit 3 (`@sveltejs/kit` peer `^3`) ([3525f37](https://github.com/fuzdev/fuz_mastodon/commit/3525f37))
+
 ## 0.43.0
 
 ### Minor Changes
