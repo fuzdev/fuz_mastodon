@@ -1,5 +1,11 @@
 # @fuzdev/fuz_mastodon
 
+## 0.45.0
+
+### Minor Changes
+
+- chore: upgrade deps ([07cc3c0](https://github.com/fuzdev/fuz_mastodon/commit/07cc3c0))
+
 ## 0.44.0
 
 ### Minor Changes
