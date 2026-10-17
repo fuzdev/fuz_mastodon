@@ -1,5 +1,11 @@
 # @fuzdev/fuz_mastodon
 
+## 0.45.1
+
+### Patch Changes
+
+- fix: bump breaking peer deps for 0.45 ([bf339d3](https://github.com/fuzdev/fuz_mastodon/commit/bf339d3))
+
 ## 0.45.0
 
 ### Minor Changes
